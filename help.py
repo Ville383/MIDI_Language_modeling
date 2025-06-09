@@ -12,7 +12,7 @@ from models import MaskPredictor
 
 
 # DATASET FUNCTIONS/CLASSES
-# Compute the average rhythmic intensity and polyphony score for each bar. Apply pitch augmentation if used
+# Compute the average rhythmic intensity and polyphony (currently not used) score for each bar. Apply pitch augmentation if used
 def compute_cond(event, tokenizer, pitch_aug):
     n_max_bars = event.ids.count(tokenizer.vocab["Bar_None"])
     poly_record = np.zeros((n_max_bars * 16,)) # Each bar has 16 position markers (notes can be held to next bar(s) -> flatten to vector)

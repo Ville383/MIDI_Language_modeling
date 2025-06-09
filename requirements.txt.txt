@@ -1,0 +1,6 @@
+numpy
+torch
+tensorboard
+tqdm
+transformers
+miditok

@@ -1,25 +1,27 @@
+import torch
 from dataclasses import dataclass
 
 @dataclass
 class HyperParams:
-    DATA_PATH: str = "you/dataset/path"
-    name: str = "transformer_10_layers_512_d_model_8_n_heads_2048_dim_ff"
-    batch_size: int = 8
-    accumulation_steps: int = 16 // batch_size # 16 virtual batch size
-    lr: float = 4e-4
+    name: str = "transformer_12_layers_512_d_model_8_n_heads_1024_dim_ff"
+    batch_size: int = 32
+    accumulation_steps: int = 64 // batch_size # 32 used in pre-training
+    block_size: int = 512
+    lr: float = 1e-4
     retrain: bool = False
-    num_training_steps: int = 200000 * accumulation_steps  # Accumulation
-    num_warmup_steps: int = 20000
-    logging_interval: int = 8000
+    num_training_steps: int = 400000 * accumulation_steps
+    num_warmup_steps: int = 16000 # updates every accumulation_steps
+    logging_interval: int = 5000 * accumulation_steps
 
 
 @dataclass
 class ModelParams:
+    device_str = 'cuda' if torch.cuda.is_available() else 'cpu'
     # Transformer:
-    num_layers: int = 10
-    d_model: int = 512
+    num_layers: int = 12
+    d_model: int = 256
     n_heads: int = 8
-    dim_ff: int = 2048
+    dim_ff: int = 1024
     dropout: float = 0.1
-    max_seq_len: int = 2048
     bias: bool = False
+    max_seq_len: int = HyperParams.block_size

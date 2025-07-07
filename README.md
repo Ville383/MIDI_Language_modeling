@@ -1,6 +1,6 @@
 ## Info
 
-Generate piano accompaniment based on the principles of masked diffusion models (MDMs). Code and training paradigms based on the recently published ["Scaling up Masked Diffusion Models on Text"](https://arxiv.org/abs/2410.18514) and ["Large Language Diffusion Models"](https://arxiv.org/abs/2502.09992).
+Generate piano accompaniment using a masked diffusion model (MDM). Code and training paradigms based on the recently published ["Scaling up Masked Diffusion Models on Text"](https://arxiv.org/abs/2410.18514) and ["Large Language Diffusion Models"](https://arxiv.org/abs/2502.09992).
 
 ## Training
 

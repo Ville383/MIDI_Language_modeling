@@ -6,7 +6,7 @@ Generate piano accompaniment using a masked diffusion model (MDM). Code and trai
 
 1. preprocess the MIDI data and train a tokenizer with BPE
 2. pre-train a model from scratch.
-3. Use supervised fine-tuning (SFT) to train the model to a specific task. (piano accompaniment)
+3. Use supervised fine-tuning (SFT) to train the model to a specific task. (piano accompaniment -> melody accompaniment pairs)
 
 - Use any existing MIDI dataset(s) to train a model. Modify the tokenizer settings to meet your needs. Currently TSD tokenizer is used.
 

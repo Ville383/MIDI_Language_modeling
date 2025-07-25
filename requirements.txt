@@ -1,0 +1,7 @@
+numpy
+torch >= 2.7.1
+tensorboard
+tqdm
+transformers
+miditok
+symusic
